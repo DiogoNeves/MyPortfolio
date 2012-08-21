@@ -9,6 +9,7 @@ import android.support.v4.view.ViewPager;
 import android.view.Menu;
 
 import com.diogo.snows.myfolio.sections.ContactSectionFragment;
+import com.diogo.snows.myfolio.sections.PortfolioSectionFragment;
 import com.diogo.snows.myfolio.sections.ResumeSectionFragment;
 
 public class MainActivity extends FragmentActivity {
@@ -89,7 +90,7 @@ public class MainActivity extends FragmentActivity {
 			mSections = new SectionInfo[] {
 						new SectionInfo("contact", new ContactSectionFragment()),
 						new SectionInfo("resume", new ResumeSectionFragment()),
-						new SectionInfo("portfolio", new ResumeSectionFragment())
+						new SectionInfo("portfolio", new PortfolioSectionFragment())
 					};
 		}
 
