@@ -1,21 +1,15 @@
 package com.diogo.snows.myfolio;
 
-import java.io.IOException;
-
-import android.content.res.AssetManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
+
+import com.diogo.snows.myfolio.sections.ContactSectionFragment;
+import com.diogo.snows.myfolio.sections.ResumeSectionFragment;
 
 public class MainActivity extends FragmentActivity {
 
@@ -92,8 +86,11 @@ public class MainActivity extends FragmentActivity {
 		public SectionsPagerAdapter(FragmentManager fm) {
 			super(fm);
 
-			mSections = new SectionInfo[] { new SectionInfo("contact",
-					new ContactSectionFragment()) };
+			mSections = new SectionInfo[] {
+						new SectionInfo("contact", new ContactSectionFragment()),
+						new SectionInfo("resume", new ResumeSectionFragment()),
+						new SectionInfo("portfolio", new ResumeSectionFragment())
+					};
 		}
 
 		@Override
@@ -109,35 +106,6 @@ public class MainActivity extends FragmentActivity {
 		@Override
 		public CharSequence getPageTitle(int position) {
 			return mSections[position].getTitle();
-		}
-	}
-
-	/**
-	 * A dummy fragment representing a section of the app, but that simply
-	 * displays dummy text.
-	 */
-	public static class ContactSectionFragment extends Fragment {
-		public ContactSectionFragment() {
-		}
-
-		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container,
-				Bundle savedInstanceState) {
-			View contactView = inflater.inflate(R.layout.contact_layout, null);
-
-			ImageView qrCode = (ImageView) contactView
-					.findViewById(R.id.qrcode);
-			if (qrCode != null) {
-				try {
-					AssetManager assetManager = getActivity().getAssets();
-					Bitmap qrImage = BitmapFactory.decodeStream(assetManager
-							.open("qrcode.png"));
-					qrCode.setImageBitmap(qrImage);
-				} catch (IOException e) {
-				}
-			}
-
-			return contactView;
 		}
 	}
 }
