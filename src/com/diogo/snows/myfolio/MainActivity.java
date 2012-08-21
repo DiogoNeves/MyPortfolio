@@ -1,19 +1,14 @@
 package com.diogo.snows.myfolio;
 
-import android.app.ActionBar;
-import android.app.FragmentTransaction;
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.NavUtils;
 import android.support.v4.view.ViewPager;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -62,14 +57,42 @@ public class MainActivity extends FragmentActivity {
      * sections of the app.
      */
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
+    	
+    	private final class SectionInfo {
+    		private final String mTitle;
+    		private final Fragment mFragment;
+    		
+    		/**
+			 * @return the mTitle
+			 */
+			public String getTitle() {
+				return mTitle;
+			}
+
+			/**
+			 * @return the mViewGroup
+			 */
+			public Fragment getFragment() {
+				return mFragment;
+			}
+
+			public SectionInfo(String title, Fragment fragment) {
+    			mTitle = title;
+    			mFragment = fragment;
+    		}
+    	}
+    	
+    	private SectionInfo[] mSections;
 
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
+            
+            mSections = new SectionInfo[] { new SectionInfo("contact", new DummySectionFragment()) };
         }
 
         @Override
         public Fragment getItem(int i) {
-            Fragment fragment = new DummySectionFragment();
+        	Fragment fragment = mSections[i].getFragment();
             Bundle args = new Bundle();
             args.putInt(DummySectionFragment.ARG_SECTION_NUMBER, i + 1);
             fragment.setArguments(args);
@@ -78,17 +101,12 @@ public class MainActivity extends FragmentActivity {
 
         @Override
         public int getCount() {
-            return 3;
+            return mSections.length;
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
-            switch (position) {
-                case 0: return getString(R.string.title_section1).toUpperCase();
-                case 1: return getString(R.string.title_section2).toUpperCase();
-                case 2: return getString(R.string.title_section3).toUpperCase();
-            }
-            return null;
+            return mSections[position].getTitle();
         }
     }
 
