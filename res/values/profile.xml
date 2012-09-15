@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="name">Diogo Neves</string>
+    <string name="mobile_number">+44 (0)77 8741 4964</string>
+    <string name="profession">Software Developer</string>
+    <string name="email">mail@diogoneves.com</string>
+
+</resources>
