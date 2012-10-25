@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.diogo.snows.myfolio.sections;
+package com.dsnows.myfolio.sections;
 
 import java.io.IOException;
 
@@ -15,7 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.diogo.snows.myfolio.R;
+import com.dsnows.myfolio.R;
 
 /**
  * @author dneves

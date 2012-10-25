@@ -1,4 +1,4 @@
-package com.diogo.snows.myfolio;
+package com.dsnows.myfolio;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,9 +8,9 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
 
-import com.diogo.snows.myfolio.sections.ContactSectionFragment;
-import com.diogo.snows.myfolio.sections.PortfolioSectionFragment;
-import com.diogo.snows.myfolio.sections.ResumeSectionFragment;
+import com.dsnows.myfolio.sections.ContactSectionFragment;
+import com.dsnows.myfolio.sections.PortfolioSectionFragment;
+import com.dsnows.myfolio.sections.ResumeSectionFragment;
 
 public class MainActivity extends FragmentActivity {
 

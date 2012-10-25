@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.diogo.snows.myfolio.sections;
+package com.dsnows.myfolio.sections;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,14 +9,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.diogo.snows.myfolio.R;
+import com.dsnows.myfolio.R;
 
 /**
  * @author dneves
  *
  */
-public class ResumeSectionFragment extends Fragment {
-	public ResumeSectionFragment() {
+public class PortfolioSectionFragment extends Fragment {
+	public PortfolioSectionFragment() {
 	}
 
 	@Override
